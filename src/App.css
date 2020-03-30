@@ -13,6 +13,26 @@
   }
 }
 
+header {
+  text-align: center;
+  background-color: teal;
+  padding:  20px 0 20px 0;
+}
+
+header h1 {
+  display: inline;
+  margin-left: 15px;
+  font-size: 56px;
+}
+
+body {
+  background-color: whitesmoke;
+}
+
+.questions-format {
+  text-align: center;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

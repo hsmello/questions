@@ -17,6 +17,7 @@ var didGameEnd = false
 function App() {
   const [participantName, setParticipantName] = useState("");
   const [participantScore, setParticipantScore] = useState("");
+  const [participantComment, setParticipantComment] = useState("");
 
   const [nextQuestion, setNextQuestion] = useState("");
   const [nextAnswer1, setNextAnswer1] = useState("Option 1");
@@ -137,9 +138,7 @@ function App() {
     console.log(allAnswers)
     setCorrectQuestionIndex(null)
     setNextQuestion(null)
-
     var correctAnswers = 0
-    // var falses = 0
 
     for (var i = 0; i < allAnswers.length; i++) {
       if (allAnswers[i] === true) {
@@ -147,8 +146,19 @@ function App() {
       } 
     }
 
-    setParticipantScore(correctAnswers / allAnswers.length * 100)
+    var score = correctAnswers / allAnswers.length * 100
 
+    if (score < 40) {
+      setParticipantComment('Estou decepcionado!')
+    } else if (39 < score < 60) {
+      setParticipantComment('Um noob mediano')
+    } else if (59 < score < 90) {
+      setParticipantComment('Destaca-se dentre os noobs')
+    } else {
+      setParticipantComment('Realmente achou que ia fazer 100 pontos?')
+    }
+
+    setParticipantScore(correctAnswers / allAnswers.length * 100)
   }
 
   return (
@@ -159,7 +169,7 @@ function App() {
         <div className="questions-format" >
           <If show={didGameStart === false }>
             <div className="questions-format" >
-              <h2>Plese insert your name</h2>
+              <h2>Olá noob, identifique-se abaixo</h2>
 
               <MyTextField
                 onChange={(event)=>{onChangeParticipantName(event)}}
@@ -222,20 +232,16 @@ function App() {
           </If>  
 
           <If show={didGameEnd}>
-          <h1>Veja a sua vergonha de pontuação</h1>
 
 
             <MyFinalTable
               player={participantName}
               score={participantScore}
-              comment={'rei dos reis'}
+              comment={participantComment}
             >
 
 
             </MyFinalTable>
-
-
-
           </If>
       </form>
     </div>

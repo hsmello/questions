@@ -25,11 +25,19 @@ export default
           {"text": "agosto", "correct": false} ]
   },
   {
-    "question": "Quantos neuronios o Fanu tem?",
-    "answers": [
-      {"text": "1", "correct": false},
-      {"text": "2", "correct": true},
-      {"text": "3", "correct": false},
-      {"text": "4", "correct": false} ]
+      "question": "Quantos neuronios o Fanu tem?",
+      "answers": [
+        {"text": "1", "correct": false},
+        {"text": "2", "correct": true},
+        {"text": "3", "correct": false},
+        {"text": "4", "correct": false} ]
+},
+{
+  "question": "Qual das alternativas está correta?",
+  "answers": [
+    {"text": "a primeira,", "correct": false},
+    {"text": "segunda,", "correct": false},
+    {"text": "terceira", "correct": false},
+    {"text": "ou quarta?", "correct": false} ]
 }
 ]

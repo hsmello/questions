@@ -18,7 +18,7 @@ export default function MyTextField(props) {
     <div className={classes.root} noValidate autoComplete="off">
       <TextField 
         id="outlined-basic" 
-        label="Outlined" 
+        label="Nome do Noob" 
         variant="outlined"
         onChange={(event)=>{props.onChange(event)}}
         />
